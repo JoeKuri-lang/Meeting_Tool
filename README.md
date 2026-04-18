@@ -5,7 +5,10 @@ A CrewAI-powered app that turns messy meeting notes, PDFs, or documents into cle
 Built for teams where meetings run long, go off-topic, or produce walls of text nobody wants to read.
 
 ---
+## Link to Official Site:
+https://claritysync-meeting-helper.onrender.com/ 
 
+---
 ## What It Does
 
 - **Summarizes** meeting notes into concise, readable recaps
