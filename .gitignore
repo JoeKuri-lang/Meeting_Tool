@@ -6,3 +6,4 @@ __pycache__/
 .uv/
 .DS_Store
 Thumbs.db
+.dockerignore
