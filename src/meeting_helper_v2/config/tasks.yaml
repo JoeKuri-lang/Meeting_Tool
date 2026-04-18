@@ -1,0 +1,80 @@
+summarize_task:
+  description: >
+    Review the following meeting transcript and produce a concise summary:
+    {transcript}
+    
+    Identify the main topics discussed, key points raised by participants,
+    and the overall purpose of the meeting. Keep the summary factual and
+    avoid interpretation. Note the current year is {current_year}.
+  expected_output: >
+    A structured meeting summary containing:
+    - Meeting purpose and context
+    - Main topics discussed
+    - Key points raised per topic
+    - Overall tone and outcome of the meeting
+  agent: summarizer
+
+action_item_task:
+  description: >
+    Analyze the following meeting transcript and extract all action items:
+    {transcript}
+
+    Look for any tasks assigned, commitments made, deadlines mentioned,
+    and owners identified. Be specific — include who is responsible and
+    by when if stated. Note the current year is {current_year}.
+  expected_output: >
+    A structured action item list containing:
+    - Action item description
+    - Owner (if identified)
+    - Deadline (if mentioned)
+    - Priority level (High / Medium / Low)
+  agent: action_item_extractor
+
+decision_task:
+  description: >
+    Analyze the following meeting transcript and log all decisions made:
+    {transcript}
+
+    Identify any conclusions reached, approvals given, options selected,
+    or directions agreed upon by the group. Note the current year is {current_year}.
+  expected_output: >
+    A structured decision log containing:
+    - Decision made
+    - Context or rationale behind the decision
+    - Who made or approved the decision (if identified)
+    - Any dependencies or follow-up required
+  agent: decision_logger
+
+risk_task:
+  description: >
+    Analyze the following meeting transcript and identify all risks,
+    blockers, and concerns raised:
+    {transcript}
+
+    Look for anything that could delay progress, cause issues, or requires
+    mitigation. Prioritize by severity. Note the current year is {current_year}.
+  expected_output: >
+    A structured risk register containing:
+    - Risk or blocker description
+    - Likelihood (High / Medium / Low)
+    - Impact (High / Medium / Low)
+    - Suggested mitigation or owner (if mentioned)
+  agent: risk_finder
+
+final_transcript_task:
+  description: >
+    Synthesize the individual outputs from the specialized agents (Summary,
+    Action Items, Decision Log, and Risk Analysis) into a single, cohesive
+    Executive Meeting Brief. You must ensure the document is scannable,
+    eliminating any redundant information while maintaining a clear narrative
+    flow. Pay special attention to the hierarchy of information — critical
+    risks and action items should be prominent. Ensure the tone is professional,
+    analytical, and ready for stakeholder review.
+    Note the current year is {current_year}.
+  expected_output: >
+    A polished Executive Meeting Brief featuring:
+    1. Executive Summary (Brief overview of the meeting)
+    2. Key Decisions (What was agreed upon)
+    3. Action Plan (Who does what and by when)
+    4. Risk Assessment (Prioritized list of bottlenecks or concerns)
+  agent: orchestrator

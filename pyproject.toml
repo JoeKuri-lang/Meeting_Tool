@@ -1,0 +1,27 @@
+[project]
+name = "meeting_helper_v2"
+version = "0.1.0"
+description = "meeting_helper_V2 using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.14.2",
+    "pdfplumber>=0.11.9",
+    "python-docx>=1.2.0",
+    "streamlit>=1.56.0",
+]
+
+[project.scripts]
+meeting_helper_v2 = "meeting_helper_v2.main:run"
+run_crew = "meeting_helper_v2.main:run"
+train = "meeting_helper_v2.main:train"
+replay = "meeting_helper_v2.main:replay"
+test = "meeting_helper_v2.main:test"
+run_with_trigger = "meeting_helper_v2.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
