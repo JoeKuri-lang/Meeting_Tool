@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#FA005F"            # Fuchsia (Action/Highlights)
+backgroundColor = "#0F0F12"         # Deep Obsidian (Foundation)
+secondaryBackgroundColor = "#1A1A21" # Charcoal (Sidebar/Cards)
+textColor = "#FCD2B0"               # Apricot (Readable Text)
+font = "sans serif"

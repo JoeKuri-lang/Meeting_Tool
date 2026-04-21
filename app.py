@@ -10,6 +10,63 @@ import re
 import pdfplumber
 from docx import Document
 
+st.set_page_config(page_title="Meeting Notes Tool", page_icon="📝", layout="wide")
+
+st.markdown(f"""
+    <style>
+    /* Deep dark background */
+    .stApp {{
+        background-color: #0F0F12;
+    }}
+
+    /* Sidebar with a subtle gradient and Apricot text */
+    [data-testid="stSidebar"] {{
+        background-color: #1A1A21 !important;
+        border-right: 2px solid #FA005F;
+    }}
+
+    /* Headers and labels in your light Apricot color */
+    h1, h2, h3, label, p {{
+        color: #FCD2B0 !important;
+    }}
+
+    /* Input areas with Apricot text and Fuchsia focus */
+    .stTextInput>div>div>input, .stTextArea>div>div>textarea {{
+        background-color: #14141A !important;
+        color: #FCD2B0 !important;
+        border: 1px solid #333333 !important;
+    }}
+    
+    .stTextInput>div>div>input:focus, .stTextArea>div>div>textarea:focus {{
+        border: 1px solid #FA005F !important;
+        box-shadow: 0 0 5px #FA005F;
+    }}
+
+    /* The 'Fuchsia to Apricot' Button Transition */
+    .stButton>button {{
+        background-color: #FA005F !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 4px !important;
+        font-weight: bold !important;
+        box-shadow: 0 4px 14px 0 rgba(250, 0, 95, 0.39);
+        transition: all 0.2s ease-in-out;
+    }}
+
+    .stButton>button:hover {{
+        background-color: #FCD2B0 !important;
+        color: #0F0F12 !important;
+        box-shadow: 0 6px 20px rgba(252, 210, 176, 0.23);
+        transform: scale(1.02);
+    }}
+
+    /* Streamlit's radio buttons and checkboxes */
+    .stRadio label p {{
+        color: #FCD2B0 !important;
+    }}
+    </style>
+""", unsafe_allow_html=True)
+
 def strip_ansi(text: str) -> str:
     ansi_escape = re.compile(r'\x1b\[[0-9;]*m|\[0m|\[92m|\[32m|\[33m|\[[0-9]+m')
     return ansi_escape.sub('', text).strip()
