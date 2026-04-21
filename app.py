@@ -66,7 +66,7 @@ st.markdown(f"""
     }}
     </style>
 """, unsafe_allow_html=True)
-
+#Stripping text to get text
 def strip_ansi(text: str) -> str:
     ansi_escape = re.compile(r'\x1b\[[0-9;]*m|\[0m|\[92m|\[32m|\[33m|\[[0-9]+m')
     return ansi_escape.sub('', text).strip()
